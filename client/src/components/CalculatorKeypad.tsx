@@ -36,16 +36,16 @@ export default function CalculatorKeypad({
   onFunction,
 }: CalculatorKeypadProps) {
   return (
-    <div className="p-3 bg-gray-50">
+    <div className="p-3 bg-gray-50 dark:bg-slate-800">
       {/* Scientific Function Tabs */}
-      <div className="border-b border-gray-200 mb-3">
+      <div className="border-b border-gray-200 dark:border-gray-700 mb-3">
         <ul className="flex -mb-px text-sm font-medium">
           <li className="mr-2">
             <a 
               onClick={() => switchTab('basic')}
               className={`inline-block p-2 cursor-pointer ${activeTab === 'basic' 
                 ? 'text-primary border-b-2 border-primary' 
-                : 'text-gray-500 hover:text-gray-600'}`}
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'}`}
             >
               Basic
             </a>
@@ -55,7 +55,7 @@ export default function CalculatorKeypad({
               onClick={() => switchTab('trig')}
               className={`inline-block p-2 cursor-pointer ${activeTab === 'trig' 
                 ? 'text-primary border-b-2 border-primary' 
-                : 'text-gray-500 hover:text-gray-600'}`}
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'}`}
             >
               Trigonometry
             </a>
@@ -65,7 +65,7 @@ export default function CalculatorKeypad({
               onClick={() => switchTab('func')}
               className={`inline-block p-2 cursor-pointer ${activeTab === 'func' 
                 ? 'text-primary border-b-2 border-primary' 
-                : 'text-gray-500 hover:text-gray-600'}`}
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'}`}
             >
               Functions
             </a>
@@ -189,16 +189,7 @@ export default function CalculatorKeypad({
         </div>
       </div>
 
-      <style jsx>{`
-        .calculator-btn:active {
-          animation: button-press 0.15s ease-in-out;
-        }
-        @keyframes button-press {
-          0% { transform: scale(1); }
-          50% { transform: scale(0.95); }
-          100% { transform: scale(1); }
-        }
-      `}</style>
+      {/* Animation styles moved to index.css */}
     </div>
   );
 }

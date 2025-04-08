@@ -17,14 +17,14 @@ export default function HistoryPanel({
 }: HistoryPanelProps) {
   return (
     <div 
-      className="absolute top-0 left-0 w-full h-full bg-white transition-transform duration-300 ease-in-out z-10"
+      className="absolute top-0 left-0 w-full h-full bg-white dark:bg-slate-800 transition-transform duration-300 ease-in-out z-10"
       style={{ transform: isOpen ? 'translateX(0%)' : 'translateX(100%)' }}
     >
-      <div className="px-4 py-3 flex justify-between items-center border-b border-gray-200">
-        <h2 className="text-lg font-medium text-gray-700">Calculation History</h2>
+      <div className="px-4 py-3 flex justify-between items-center border-b border-gray-200 dark:border-gray-700">
+        <h2 className="text-lg font-medium text-gray-700 dark:text-gray-200">Calculation History</h2>
         <button 
           onClick={closeHistory}
-          className="text-gray-500 hover:text-gray-700 transition-colors"
+          className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M18 6 6 18" />
@@ -38,16 +38,16 @@ export default function HistoryPanel({
             {history.map((item, index) => (
               <li 
                 key={index}
-                className="p-2 border-b border-gray-100 hover:bg-gray-50 cursor-pointer transition-colors rounded"
+                className="p-2 border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-slate-700 cursor-pointer transition-colors rounded"
                 onClick={() => onHistoryItemClick(item)}
               >
-                <div className="text-sm text-gray-500">{item.calculation}</div>
-                <div className="font-mono text-lg text-slate-900">{item.result}</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">{item.calculation}</div>
+                <div className="font-mono text-lg text-slate-900 dark:text-white">{item.result}</div>
               </li>
             ))}
           </ul>
         ) : (
-          <div className="text-center py-8 text-gray-500">
+          <div className="text-center py-8 text-gray-500 dark:text-gray-400">
             <svg xmlns="http://www.w3.org/2000/svg" className="mx-auto mb-2" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
@@ -58,7 +58,7 @@ export default function HistoryPanel({
         
         <button 
           onClick={clearHistory}
-          className="mt-4 w-full py-2 px-4 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium transition-colors"
+          className="mt-4 w-full py-2 px-4 bg-gray-200 dark:bg-slate-700 hover:bg-gray-300 dark:hover:bg-slate-600 text-slate-900 dark:text-white rounded-lg text-sm font-medium transition-colors"
         >
           Clear History
         </button>

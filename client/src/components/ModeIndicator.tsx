@@ -10,7 +10,7 @@ export default function ModeIndicator({
   hasMemory 
 }: ModeIndicatorProps) {
   return (
-    <div className="flex justify-between text-xs text-gray-500 px-4 pb-2">
+    <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 px-4 pb-2">
       <div>
         <span 
           onClick={toggleDegRad}
