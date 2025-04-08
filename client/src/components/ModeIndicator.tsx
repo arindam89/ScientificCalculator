@@ -10,11 +10,11 @@ export default function ModeIndicator({
   hasMemory 
 }: ModeIndicatorProps) {
   return (
-    <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 px-4 pb-2">
-      <div>
+    <div className="flex justify-between items-center text-xs text-gray-500 dark:text-gray-400 px-4 py-2 h-8 bg-gray-50 dark:bg-slate-800 border-t border-gray-100 dark:border-gray-700">
+      <div className="flex items-center">
         <span 
           onClick={toggleDegRad}
-          className="cursor-pointer hover:text-primary transition-colors"
+          className="cursor-pointer hover:text-primary transition-colors font-medium"
         >
           {isDegrees ? 'DEG' : 'RAD'}
         </span>

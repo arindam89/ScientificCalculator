@@ -30,7 +30,7 @@ export default function CalculatorDisplay({
       </div>
       
       {/* Error Message */}
-      <div className="flex justify-end text-xs text-gray-500 dark:text-gray-400 mt-1">
+      <div className="flex justify-end text-xs text-gray-500 dark:text-gray-400 mb-1">
         {errorMessage && (
           <span className="text-red-500 dark:text-red-400">
             {errorMessage}
