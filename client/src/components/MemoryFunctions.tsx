@@ -14,11 +14,11 @@ export default function MemoryFunctions({ onMemoryOperation }: MemoryFunctionsPr
   ];
 
   return (
-    <div className="grid grid-cols-5 gap-2 p-3 pt-3 pb-0 bg-gray-50 dark:bg-slate-800">
+    <div className="grid grid-cols-5 gap-1 sm:gap-2 p-2 sm:p-3 pt-2 sm:pt-3 pb-0 bg-gray-50 dark:bg-slate-800">
       {memoryButtons.map((button) => (
         <button
           key={button.label}
-          className="calculator-btn bg-gray-200 text-slate-900 hover:bg-gray-300 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600 rounded-lg p-2 text-sm font-medium transition-colors"
+          className="calculator-btn bg-gray-200 text-slate-900 hover:bg-gray-300 dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600 rounded-lg text-xs sm:text-sm font-medium transition-colors h-7 sm:h-8"
           onClick={() => onMemoryOperation(button.action)}
         >
           {button.label}

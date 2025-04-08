@@ -10,9 +10,9 @@ export default function CalculatorDisplay({
   errorMessage,
 }: CalculatorDisplayProps) {
   return (
-    <div className="px-4 pt-4 pb-2 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-slate-800 dark:to-slate-800/90">
+    <div className="px-3 md:px-4 pt-3 md:pt-4 pb-2 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-slate-800 dark:to-slate-800/90">
       {/* Previous Calculation */}
-      <div className="h-6 text-sm text-gray-500 dark:text-gray-400 font-mono overflow-x-auto whitespace-nowrap" style={{ 
+      <div className="h-5 md:h-6 text-xs md:text-sm text-gray-500 dark:text-gray-400 font-mono overflow-x-auto whitespace-nowrap" style={{ 
         textAlign: "right",
         direction: "ltr",
         scrollbarWidth: "none",
@@ -21,7 +21,7 @@ export default function CalculatorDisplay({
       </div>
       
       {/* Current Input/Result */}
-      <div className="h-14 text-3xl font-semibold text-slate-900 dark:text-slate-50 font-mono overflow-x-auto whitespace-nowrap" style={{ 
+      <div className="h-12 md:h-14 text-2xl md:text-3xl font-semibold text-slate-900 dark:text-slate-50 font-mono overflow-x-auto whitespace-nowrap" style={{ 
         textAlign: "right",
         direction: "ltr",
         scrollbarWidth: "none",
