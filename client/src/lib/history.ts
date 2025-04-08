@@ -29,6 +29,16 @@ export function saveHistory(history: HistoryItem[]): void {
   }
 }
 
+// Create a custom event for history updates
+const HISTORY_UPDATED_EVENT = 'calculator-history-updated';
+
+// Dispatch an event when history changes
+function dispatchHistoryUpdateEvent() {
+  const event = new CustomEvent(HISTORY_UPDATED_EVENT);
+  window.dispatchEvent(event);
+}
+
+// Add a history item and notify listeners
 export function addHistoryItem(calculation: string, result: string): HistoryItem[] {
   const history = getStoredHistory();
   
@@ -44,11 +54,15 @@ export function addHistoryItem(calculation: string, result: string): HistoryItem
   // Save to localStorage
   saveHistory(limitedHistory);
   
+  // Dispatch event
+  dispatchHistoryUpdateEvent();
+  
   return limitedHistory;
 }
 
 export function clearHistory(): HistoryItem[] {
   saveHistory([]);
+  dispatchHistoryUpdateEvent();
   return [];
 }
 
